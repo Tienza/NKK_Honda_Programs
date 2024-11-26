@@ -8,7 +8,8 @@ const RESOURCE_DIR = './resources';
 const OUPUT_DIR = './output';
 // File name constants
 const PRICE_LIST_FILE_NAME = 'price_list_source.xlsx';
-const OUTPUT_FILE_NAME = () => path.join(OUPUT_DIR, `${(new Date()).toISOString()}_price_list.xlsx`);
+const OUTPUT_FILE_NAME = () => path.join(OUPUT_DIR, `${(new Date()).toISOString()
+    .replaceAll(/[\*"/\<>:|?-]/g, '_')}_price_list.xlsx`);
 // File constants
 const PRICE_LIST_FILE = reader.readFile(path.join(RESOURCE_DIR, PRICE_LIST_FILE_NAME));
 // Required column names
